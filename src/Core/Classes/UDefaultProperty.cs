@@ -424,9 +424,9 @@ namespace UELib.Core
 
                     case PropertyType.LinearColor:
                         {
-                            string b = DeserializeDefaultPropertyValue( PropertyType.FloatProperty, ref deserializeFlags );
+                            string r = DeserializeDefaultPropertyValue(PropertyType.FloatProperty, ref deserializeFlags);
                             string g = DeserializeDefaultPropertyValue( PropertyType.FloatProperty, ref deserializeFlags );
-                            string r = DeserializeDefaultPropertyValue( PropertyType.FloatProperty, ref deserializeFlags );
+                            string b = DeserializeDefaultPropertyValue(PropertyType.FloatProperty, ref deserializeFlags);
                             string a = DeserializeDefaultPropertyValue( PropertyType.FloatProperty, ref deserializeFlags );
 
                             propertyValue += "R=" + r +
