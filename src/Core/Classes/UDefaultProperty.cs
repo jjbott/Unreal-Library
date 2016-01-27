@@ -608,7 +608,7 @@ namespace UELib.Core
                             for( var i = (byte)PropertyType.StructOffset; i < hardcodedStructs.Length; ++ i )
                             {
                                 var structType = Enum.GetName( typeof( PropertyType ), (byte)hardcodedStructs[i] );
-                                if( String.Compare( ItemName, structType, StringComparison.OrdinalIgnoreCase ) != 0 )
+                                if (String.Compare(ItemName ?? _Outer.Name, structType, StringComparison.OrdinalIgnoreCase) != 0)
                                     continue;
 
                                 isHardCoded = true;
