@@ -107,7 +107,12 @@ namespace UELib
             SerialSize = stream.ReadIndex();
             if( SerialSize > 0 || stream.Version >= VSerialSizeConditionless )
             {
-                SerialOffset = stream.ReadIndex();
+                // FIXME: Subtracting 16152 puts the offset in the right spot for new versions of WinDrv.upk.
+                // But, that doesnt make a lot of sense. Not sure if the same constant would apply to other files.
+                // At a minimum this needs to be versioned so old files still work. But I suspect that the data 
+                // needs to be interpreted differently. Either way, this isnt enough for WinDrv.upk to work.
+                // There are still other problems.
+                SerialOffset = stream.ReadIndex() - 16152;
             }
 #if BIOSHOCK
             if( stream.Package.Build == UnrealPackage.GameBuild.BuildName.Bioshock && stream.Version >= 130 )
