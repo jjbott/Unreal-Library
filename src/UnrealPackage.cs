@@ -562,6 +562,11 @@ namespace UELib
         public long HeaderSize{ get; private set; }
 
         /// <summary>
+        /// The offset that must be added to certain object offsets so they load correctly. I dont get it either.
+        /// </summary>
+        public long WeirdOffset { get; private set; }
+
+        /// <summary>
         /// The group the package is associated with in the Content Browser.
         /// </summary>
         public string Group;
@@ -1140,7 +1145,10 @@ namespace UELib
                 Console.WriteLine( "Deserialized {0} dependencies", pkg.DependsTableList.Count );
             }*/
 
-            HeaderSize = stream.Position;
+            //HeaderSize = stream.Position;
+
+            WeirdOffset = HeaderSize - stream.Position;
+
         }
 
         /// <summary>

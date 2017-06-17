@@ -107,16 +107,7 @@ namespace UELib
             SerialSize = stream.ReadIndex();
             if( SerialSize > 0 || stream.Version >= VSerialSizeConditionless )
             {
-                // FIXME: Adding a constant puts the offset in the right spot for new versions of WinDrv.upk.
-                // But, that doesnt make a lot of sense. Not sure if the same constant would apply to other files.
-                // At a minimum this needs to be versioned so old files still work. But I suspect that the data 
-                // needs to be interpreted differently. 
-                // Seems like there is a 2nd wrong version of the data in the middle of the file.
-                // The first export from WinDrv.upk (ChildProcHandle) has data at positions 40333 and 62563.
-                // The offset we read from the file is 46389. Looks like the data at 62563 is correct though,
-                // because the following offset allows the whole file to load without throwing link errors. 
-                // The decompiled code still looks like garbage though.
-                SerialOffset = stream.ReadIndex() + 16174;
+                SerialOffset = stream.ReadIndex();
             }
 #if BIOSHOCK
             if( stream.Package.Build == UnrealPackage.GameBuild.BuildName.Bioshock && stream.Version >= 130 )
