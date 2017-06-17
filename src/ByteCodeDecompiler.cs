@@ -169,8 +169,19 @@ namespace UELib.Core
                         case (ExprToken)0x2b: tokenCode = (byte)ExprToken.Nothing; break;
                         case ExprToken.VarFloat: tokenCode = (byte)ExprToken.EndOfScript; break;
                         case ExprToken.DynArrayRemove: tokenCode = (byte)ExprToken.NativeParm; break;
-                        //case ExprToken.ExtendedNative: tokenCode = (byte)ExprToken.Context; break;
-                        //case ExprToken.FloatConst: tokenCode = (byte)ExprToken.ClassContext; break;
+                        case ExprToken.ExtendedNative: tokenCode = (byte)ExprToken.Context; break;
+                        case ExprToken.DynArrayAddItem: tokenCode = (byte)ExprToken.ClassContext; break;
+                        case ExprToken.FloatConst: tokenCode = (byte)ExprToken.ObjectConst; break;
+                        case (ExprToken)0x5c: tokenCode = (byte)ExprToken.VirtualFunction; break;
+                        case (ExprToken)0x6e: tokenCode = (byte)ExprToken.EndFunctionParms; break;
+                        case (ExprToken)0xf8: tokenCode = (byte)ExprToken.FirstNative; break;
+                        case ExprToken.DefaultParmValue: tokenCode = (byte)ExprToken.LocalVariable; break;
+                        case (ExprToken)0x68: tokenCode = (byte)ExprToken.InstanceVariable; break;
+                        case ExprToken.DefaultVariable: tokenCode = (byte)ExprToken.DelegateProperty; break;
+                        case ExprToken.DynArrayFindStruct: tokenCode = (byte)ExprToken.Return; break;
+
+
+
                     }
                 }
 

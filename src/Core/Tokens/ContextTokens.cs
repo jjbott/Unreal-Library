@@ -21,6 +21,12 @@
 #endif
                         ; 
 
+                    if ( Package.LicenseeVersion >= 17)
+                    {
+                        // 00 after 0x60, guessing its some new size of something we dont care about (since it's 0)
+                        stream.ReadByte();
+                    }
+
                     // A.?
                     DeserializeNext();
 
