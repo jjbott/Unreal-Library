@@ -1147,7 +1147,11 @@ namespace UELib
 
             //HeaderSize = stream.Position;
 
-            WeirdOffset = HeaderSize - stream.Position;
+            // This check probably isn't foolproof in the general case, but works well enough so far in testing Rocket League
+            if (LicenseeVersion >= 17)
+            {
+                WeirdOffset = HeaderSize - stream.Position;
+            }
 
         }
 
