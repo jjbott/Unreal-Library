@@ -171,7 +171,7 @@ namespace UELib.Core
                 try
                 {
                     _Container.EnsureBuffer();
-                    Buffer.Seek( _Container.ScriptOffset + Package.WeirdOffset, System.IO.SeekOrigin.Begin );
+                    Buffer.Seek( _Container.ScriptOffset, System.IO.SeekOrigin.Begin );
                     CodePosition = 0;
                     var codeSize = _Container.ByteScriptSize;
 
