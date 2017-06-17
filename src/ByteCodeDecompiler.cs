@@ -158,6 +158,22 @@ namespace UELib.Core
                 }
                 #endif
 
+                // Rocket League hackery
+                if (_Container.Package.LicenseeVersion >= 17)
+                {
+                    switch ((ExprToken)tokenCode)
+                    {
+                        case ExprToken.LetDelegate: tokenCode = (byte)ExprToken.DefaultParmValue; break;
+                        case ExprToken.NativeParm: tokenCode = (byte)ExprToken.StringConst; break;
+                        case ExprToken.Switch: tokenCode = (byte)ExprToken.EndParmValue; break;
+                        case (ExprToken)0x2b: tokenCode = (byte)ExprToken.Nothing; break;
+                        case ExprToken.VarFloat: tokenCode = (byte)ExprToken.EndOfScript; break;
+                        case ExprToken.DynArrayRemove: tokenCode = (byte)ExprToken.NativeParm; break;
+                        //case ExprToken.ExtendedNative: tokenCode = (byte)ExprToken.Context; break;
+                        //case ExprToken.FloatConst: tokenCode = (byte)ExprToken.ClassContext; break;
+                    }
+                }
+
                 return tokenCode;
             }
 
