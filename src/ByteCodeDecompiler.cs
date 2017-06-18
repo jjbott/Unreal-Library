@@ -179,6 +179,11 @@ namespace UELib.Core
                         case (ExprToken)0x68: tokenCode = (byte)ExprToken.InstanceVariable; break;
                         case ExprToken.DefaultVariable: tokenCode = (byte)ExprToken.DelegateProperty; break;
                         case ExprToken.DynArrayFindStruct: tokenCode = (byte)ExprToken.Return; break;
+                        case ExprToken.Skip: tokenCode = (byte)ExprToken.JumpIfNot; break;
+                        case ExprToken.ArrayElement: tokenCode = (byte)ExprToken.BoolVariable; break;
+                        case ExprToken.FinalFunction: tokenCode = (byte)ExprToken.Let; break;
+                        case (ExprToken)0x67: tokenCode = (byte)ExprToken.Conditional; break;
+                        case ExprToken.ObjectConst: tokenCode = (byte)ExprToken.IntConst; break;
 
 
 
