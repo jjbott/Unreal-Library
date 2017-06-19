@@ -161,32 +161,49 @@ namespace UELib.Core
                 // Rocket League hackery
                 if (_Container.Package.LicenseeVersion >= 17)
                 {
-                    switch ((ExprToken)tokenCode)
+                    switch (tokenCode)
                     {
-                        case ExprToken.LetDelegate: tokenCode = (byte)ExprToken.DefaultParmValue; break;
-                        case ExprToken.NativeParm: tokenCode = (byte)ExprToken.StringConst; break;
-                        case ExprToken.Switch: tokenCode = (byte)ExprToken.EndParmValue; break;
-                        case (ExprToken)0x2b: tokenCode = (byte)ExprToken.Nothing; break;
-                        case ExprToken.VarFloat: tokenCode = (byte)ExprToken.EndOfScript; break;
-                        case ExprToken.DynArrayRemove: tokenCode = (byte)ExprToken.NativeParm; break;
-                        case ExprToken.ExtendedNative: tokenCode = (byte)ExprToken.Context; break;
-                        case ExprToken.DynArrayAddItem: tokenCode = (byte)ExprToken.ClassContext; break;
-                        case ExprToken.FloatConst: tokenCode = (byte)ExprToken.ObjectConst; break;
-                        case (ExprToken)0x5c: tokenCode = (byte)ExprToken.VirtualFunction; break;
-                        case (ExprToken)0x6e: tokenCode = (byte)ExprToken.EndFunctionParms; break;
-                        case (ExprToken)0xf8: tokenCode = (byte)ExprToken.FirstNative; break;
-                        case ExprToken.DefaultParmValue: tokenCode = (byte)ExprToken.LocalVariable; break;
-                        case (ExprToken)0x68: tokenCode = (byte)ExprToken.InstanceVariable; break;
-                        case ExprToken.DefaultVariable: tokenCode = (byte)ExprToken.DelegateProperty; break;
-                        case ExprToken.DynArrayFindStruct: tokenCode = (byte)ExprToken.Return; break;
-                        case ExprToken.Skip: tokenCode = (byte)ExprToken.JumpIfNot; break;
-                        case ExprToken.ArrayElement: tokenCode = (byte)ExprToken.BoolVariable; break;
-                        case ExprToken.FinalFunction: tokenCode = (byte)ExprToken.Let; break;
-                        case (ExprToken)0x67: tokenCode = (byte)ExprToken.Conditional; break;
-                        case ExprToken.ObjectConst: tokenCode = (byte)ExprToken.IntConst; break;
-
-
-
+                        case 0x00: tokenCode = 0x27; break;
+                        case 0x02: tokenCode = 0x44; break;
+                        case 0x04: tokenCode = 0x36; break;
+                        case 0x05: tokenCode = 0x15; break;
+                        case 0x12: tokenCode = 0x18; break;
+                        case 0x17: tokenCode = 0x25; break;
+                        case 0x18: tokenCode = 0x07; break;
+                        case 0x1A: tokenCode = 0x2D; break;
+                        case 0x1C: tokenCode = 0x0F; break;
+                        case 0x1E: tokenCode = 0x20; break;
+                        case 0x20: tokenCode = 0x1D; break;
+                        case 0x21: tokenCode = 0x14; break;
+                        case 0x23: tokenCode = 0x4B; break;
+                        case 0x29: tokenCode = 0x1F; break;
+                        case 0x2B: tokenCode = 0x0B; break;
+                        case 0x2D: tokenCode = 0x39; break;
+                        case 0x2E: tokenCode = 0x37; break;
+                        case 0x37: tokenCode = 0x28; break;
+                        case 0x3B: tokenCode = 0x06; break;
+                        case 0x41: tokenCode = 0x29; break;
+                        case 0x45: tokenCode = 0x4A; break;
+                        case 0x48: tokenCode = 0x04; break;
+                        case 0x4E: tokenCode = 0x54; break;
+                        case 0x4A: tokenCode = 0x00; break;
+                        case 0x4B: tokenCode = 0x1C; break;
+                        case 0x54: tokenCode = 0x2C; break;
+                        case 0x55: tokenCode = 0x2A; break;
+                        case 0x56: tokenCode = 0x12; break;
+                        case 0x5C: tokenCode = 0x1B; break;
+                        case 0x60: tokenCode = 0x19; break;
+                        case 0x63: tokenCode = 0x0E; break;
+                        case 0x64: tokenCode = 0x24; break;
+                        case 0x66: tokenCode = 0x3A; break;
+                        case 0x67: tokenCode = 0x46; break;
+                        case 0x68: tokenCode = 0x01; break;
+                        case 0x6E: tokenCode = 0x16; break;
+                        case 0x71: tokenCode = 0x61; break;
+                        case 0xCE: tokenCode = 0x77; break;
+                        case 0xD1: tokenCode = 0x7E; break;
+                        case 0xEF: tokenCode = 0x7D; break;
+                        case 0xF8: tokenCode = 0x70; break;
                     }
                 }
 
