@@ -149,7 +149,7 @@ namespace UELib.Core
         {
             //Console.WriteLine( "Init buffer for {0}", (string)this );
             var buff = new byte[ExportTable.SerialSize];
-            Package.Stream.Seek( ExportTable.SerialOffset + Package.WeirdOffset, SeekOrigin.Begin );
+            Package.Stream.Seek( ExportTable.SerialOffset, SeekOrigin.Begin );
             Package.Stream.Read( buff, 0, ExportTable.SerialSize );
             if( Package.Stream.BigEndianCode )
             {

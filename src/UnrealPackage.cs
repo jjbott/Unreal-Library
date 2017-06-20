@@ -562,11 +562,6 @@ namespace UELib
         public long HeaderSize{ get; private set; }
 
         /// <summary>
-        /// The offset that must be added to certain object offsets so they load correctly. I dont get it either.
-        /// </summary>
-        public long WeirdOffset { get; private set; }
-
-        /// <summary>
         /// The group the package is associated with in the Content Browser.
         /// </summary>
         public string Group;
@@ -1145,14 +1140,7 @@ namespace UELib
                 Console.WriteLine( "Deserialized {0} dependencies", pkg.DependsTableList.Count );
             }*/
 
-            //HeaderSize = stream.Position;
-
-            // This check probably isn't foolproof in the general case, but works well enough so far in testing Rocket League
-            if (LicenseeVersion >= 17)
-            {
-                WeirdOffset = HeaderSize - stream.Position;
-            }
-
+            HeaderSize = stream.Position;
         }
 
         /// <summary>
