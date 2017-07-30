@@ -1,3 +1,8 @@
+Fork Notes
+============
+
+This fork was created to attempt fixing decompilation of the latest Rocket League upk file. Good progress was made but someone else finished already, so there's no need. My decryption logic works better with WinDrv.upk than the latest decryptor (that I know of) so that could be improved. Maybe someday!
+
 [![Build status](https://ci.appveyor.com/api/projects/status/451gy3lrr06wfxcw?svg=true)](https://ci.appveyor.com/project/EliotVU/unreal-library) 
 [![Gratipay](https://img.shields.io/gratipay/EliotVU.svg)](https://www.gratipay.com/eliotvu/)
 
